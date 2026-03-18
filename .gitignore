@@ -210,4 +210,9 @@ __marimo__/
 envs/local.env
 
 # ChromaDB
-chroma_db/
+chroma_db/*
+
+# Courpus
+corpus/*
+
+!.gitkeep
