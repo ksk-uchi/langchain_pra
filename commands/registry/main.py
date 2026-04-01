@@ -1,4 +1,5 @@
 import hashlib
+import os
 from pathlib import Path
 
 import chromadb
@@ -10,7 +11,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 _REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 load_dotenv(_REPO_ROOT / "envs" / "local.env")
 
-EMBEDDING_MODEL_ID = "gemini-embedding-001"
+EMBEDDING_MODEL_ID = os.getenv("EMBEDDING_MODEL_ID", default="gemini-embedding-001")
 CHUNK_SIZE = 500
 CHUNK_OVERLAP = 50
 SUPPORTED_EXTENSIONS: frozenset[str] = frozenset({".txt", ".md"})
